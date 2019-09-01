@@ -28,6 +28,7 @@ public class EmployeeController {
 		return employeeService.getEmployeesList();
 	}
 	
+	@CrossOrigin
 	@PostMapping
 	public String addEmployee(@RequestBody Employee employee) {
 		
