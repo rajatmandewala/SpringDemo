@@ -29,8 +29,9 @@ public class EmployeeService {
 		return false;
 	}	
 	
-	public boolean deleteEmployee(Employee employee) {		
-		if(employeeRepository.findById(employee.getId())!=null)		
+	public boolean deleteEmployee(Integer id) {
+		Employee employee=employeeRepository.findById(id).get();
+		if(employee!=null)		
 		employeeRepository.delete(employee);		
 		return true;
 	}
