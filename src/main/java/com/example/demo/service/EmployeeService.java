@@ -27,6 +27,18 @@ public class EmployeeService {
 		if(employeeRepository.save(employee)!=null)
 			return true;
 		return false;
-	}		
-
+	}	
+	
+	public boolean deleteEmployee(Employee employee) {		
+		if(employeeRepository.findById(employee.getId())!=null)		
+		employeeRepository.delete(employee);		
+		return true;
+	}
+	
+	public boolean editEmployee(Employee employee) {		
+		Employee emp=employeeRepository.findById(employee.getId()).get();
+		if(emp!=null)
+			employeeRepository.save(employee);		
+		return true;
+	}
 }
